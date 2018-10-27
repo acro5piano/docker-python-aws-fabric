@@ -15,7 +15,6 @@ RUN apk add --no-cache \
     openssh-client \
     git \
     python3-dev \
-    python3 \
-    py-pip
+    python3
 
 RUN pip3 install awscli fabric slackclient
