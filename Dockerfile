@@ -18,3 +18,7 @@ RUN apk add --no-cache \
     python3
 
 RUN pip3 install awscli fabric slackclient
+
+RUN apk add --no-cache tzdata
+RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN echo Asia/Tokyo > /etc/timezone
