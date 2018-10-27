@@ -15,7 +15,9 @@ RUN apk add --no-cache \
     python \
     py-pip
 
-    # unzip \
-    # findutils \
-
 RUN pip install awscli fabric
+
+# TODO: integrate
+RUN apk add --no-cache curl
+RUN apk add --no-cache openssl
+RUN apk add --no-cache bash
