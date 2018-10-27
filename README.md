@@ -8,9 +8,8 @@ Fabric
 
 ```
 docker run --rm \
-    -d $HOME/.aws:/root/.aws \
-    -d $HOME/.ssh:/root/.ssh \
-    acro5piano/docker-python-aws-fabric fab -H 12.34.567.89 deploy
+    -v $HOME/.ssh:/root/.ssh \
+    acro5piano/docker-python-aws-fabric aws s3api list-buckets
 
 ```
 
@@ -18,6 +17,9 @@ AWS
 
 ```
 docker run --rm \
-    -d $HOME/.aws:/root/.aws \
-    -d $HOME/.ssh:/root/.ssh \
+    -v $HOME/.aws:/root/.aws \
     acro5piano/docker-python-aws-fabric fab -H 12.34.567.89 deploy
+```
+
+
+Please note that if you don't have a section `default` in ~/.aws/credentials, `Unable to locate credentials. You can configure credentials by running "aws configure".` will be thrown.
