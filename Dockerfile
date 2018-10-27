@@ -16,6 +16,6 @@ RUN apk add --no-cache \
     git \
     python3-dev \
     python3 \
-    py-pip \
+    py-pip
 
 RUN pip3 install awscli fabric slackclient
