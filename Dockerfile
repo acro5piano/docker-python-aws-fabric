@@ -5,19 +5,17 @@ MAINTAINER gosho-kazuya <ketsume0211@gmail.com>
 RUN apk add --no-cache \
     git \
     gcc \
-    python-dev \
+    curl \
+    openssl \
+    bash \
     musl-dev \
     libffi-dev \
     openssl-dev \
     make \
     openssh-client \
     git \
-    python \
-    py-pip
+    python3-dev \
+    python3 \
+    py-pip \
 
-RUN pip install awscli fabric
-
-# TODO: integrate
-RUN apk add --no-cache curl
-RUN apk add --no-cache openssl
-RUN apk add --no-cache bash
+RUN pip3 install awscli fabric slackclient
